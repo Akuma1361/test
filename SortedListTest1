@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+/**
+ * @version 1.0
+ * @author： Yulin Peng
+ * @date： 2021-05-31 09:39
+ */
+public class SortedListTest1 {
+    private List<Integer> sortedList = new ArrayList<>();
+
+    public static void main(String[] args) {
+        SortedListTest1 sortedListTest = new SortedListTest1();
+        sortedListTest.addElement(2);
+        sortedListTest.addElement(1);
+        sortedListTest.addElement(5);
+        sortedListTest.addElement(10);
+        sortedListTest.addElement(7);
+        sortedListTest.sortedList.forEach(a->System.out.println(a));;
+
+    }
+
+    public void addElement(int element){
+        sortedList.add(element);
+        sortedList.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                if (o1 == null || o2 == null) {
+                    return 0;
+                }
+                return  o1.compareTo(o2);
+            }
+        });
+    }
+
+}

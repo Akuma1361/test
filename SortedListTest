@@ -7,21 +7,20 @@ import java.util.List;
  * @author： Yulin Peng
  * @date： 2021-05-31 09:39
  */
-public class SortedListTest1 {
+public class SortedListTest {
     private List<Integer> sortedList = new ArrayList<>();
 
     public static void main(String[] args) {
-        SortedListTest1 sortedListTest = new SortedListTest1();
+        SortedListTest sortedListTest = new SortedListTest();
         sortedListTest.addElement(2);
         sortedListTest.addElement(1);
         sortedListTest.addElement(5);
         sortedListTest.addElement(10);
         sortedListTest.addElement(7);
-        sortedListTest.sortedList.forEach(a->System.out.println(a));;
-
+        sortedListTest.sortedList.forEach(a -> System.out.println(a));
     }
 
-    public void addElement(int element){
+    public void addElement(int element) {
         sortedList.add(element);
         sortedList.sort(new Comparator<Integer>() {
             @Override
@@ -29,9 +28,9 @@ public class SortedListTest1 {
                 if (o1 == null || o2 == null) {
                     return 0;
                 }
-                return  o1.compareTo(o2);
+                return o1.compareTo(o2);
             }
         });
     }
-
+    
 }
